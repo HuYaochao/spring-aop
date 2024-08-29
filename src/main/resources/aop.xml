@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--    <bean id="aop1" class="org.company.proxy.AopProxy"/>-->
+<!--    <context:component-scan base-package="org.company.target"/>-->
+
+<!--    <aop:config>-->
+<!--&lt;!&ndash;        <aop:pointcut id="aopref" expression="execution(int org.company.target.Target.add(int ))"/>&ndash;&gt;-->
+<!--        <aop:pointcut id="aopref" expression="execution(* org.company.target.Target.add(..))"/>-->
+
+<!--        <aop:aspect ref="aop1">-->
+<!--&lt;!&ndash;            <aop:before method="before" pointcut="execution(void org.company.target.Target.add())"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:after method="after" pointcut="execution(void org.company.target.Target.add())"/>&ndash;&gt;-->
+<!--        <aop:around method="around" pointcut-ref="aopref"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+
+    <!-- 开启注解扫描 -->
+    <context:component-scan base-package="org.company.proxy"/>
+    <context:component-scan base-package="org.company.target"/>
+
+    <!-- 开启aop注解方式 -->
+    <aop:aspectj-autoproxy/>
+</beans>
